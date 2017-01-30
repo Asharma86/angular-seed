@@ -1,1 +1,19 @@
-<p>This is the partial for view 1.</p>
+<p>Please enter your name to register: <input ng-model="name"></p>
+<p class="text-muted">welcome!! {{ name }}</p>
+<p class="text-muted">
+    1. What do you want to learn? :{{ Courses }}</p>
+<p><input ng-model="course"></p>
+<hr />
+<p class="text-info, function($scope)">Thanks for choosing to learn : {{ course }}</p>
+<hr />
+<p class="text-muted">
+    You can read about the courses at : </p>
+<p class="text-info">{{courselink }}</p>
+<hr /><!--
+        <p class="text-muted">
+            3. Your course will start today: {{date | date:'yyyy-MM-dd'}}
+        </p>-->
+<hr />
+<div>
+    <img ng-src="{{getCourseImage(course)}}" />
+</div>
