@@ -3,3 +3,37 @@
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
 </p>
+<h6>Displaying temperature</h6>
+<div class="container-fluid">
+  <div class="row">
+	<div class="col-md-2">
+<input placeholder="enter a city name" ng-keypress="myFunct($event)" ng-model="city" / >
+<p>{{msg}}</p>
+<a  ng-click='go()'>click me</a><br/>
+ <div class="row">
+  <div class="col-md-2">
+    <div class="col-md-6">
+      City:{{inputInformationName}}
+    </div>
+    <div class="col-md-6">
+      Country:{{inputInformationCountry}}
+    </div>
+</div>
+</div>
+</div>
+<div class="col-md-10" >
+<ul>
+	 <li ng-repeat="temp  in temps">
+	 	<span>Date:{{ parseDate(temp.dt)| date:'yyyy-MM-dd'}}</span>
+    <h6><strong>Weather </strong></h6>
+    <p>Description : {{temp.weather[0].description}} &nbsp; <img ng-src="{{getIconImageUrl(temp.weather[0].icon)}}" /></p>
+    ------------------------------
+    <h6><strong>Other Details</strong></h6>
+      <p>pressure:{{temp.pressure}}</p>
+      <p>humidity:{{temp.humidity}}</p>
+      <p>degrees:{{temp.deg}}</p>
+      <p>min:{{temp.temp.min}}</p>
+      <p>max:{{temp.temp.max}}</p>
+    </li>
+</ul>
+</div>
