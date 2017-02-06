@@ -7,4 +7,8 @@ angular.module('myApp.view3', [ 'ngRoute' ])
     templateUrl : 'view3/viewModule.html',
     controller:'viewModuleController'
   });
-} ]);
+} ]).directive('myCustomer', function() {
+  return {
+    template: 'Name: {{customer.name}} Address: {{customer.address}}'
+  };
+});

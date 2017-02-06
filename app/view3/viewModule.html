@@ -1,43 +1,48 @@
 <p>This is the partial for students display.</p>
 <div ng-contoller="viewModuleController">
-	<div class="container-fluid">
-  <div class="row">
-	<div class="col-md-2">
- Search: <input ng-model="query" />
- <br/>
-  <br/>
-  <p>
-        Sort by:
-        <select ng-model="orderProp">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2" id="idSidebar">
+                Search: <input ng-model="query" />
+                <br/>
+                <br/>
+                <p>
+                    Sort by:
+                    <select ng-model="orderProp">
         	<option selected="selected">none</option>
           <option value="name">Alphabetical</option>
          <!--  <option value="age">Newest</option> -->
         </select>
-      </p>
-       <p>
-       Add a student
-        <form ng-submit="Add()">
-<div class="row">
-                <label for="newName">State: </label>
-                <input id="newName" type="text" placeholder="Name"  ng-model="newName">
+                </p>
+                <p>
+                    Add a student
+                    <form ng-submit="Add()">
+                        <div class="row">
+                            <label for="newName">State: </label>
+                            <input id="newName" type="text" placeholder="Name" ng-model="newName">
+                        </div>
+                        <div class="row">
+                            <label for="newAddress">Price: </label>
+                            <input id="newAddress" type="text" placeholder="Address" ng-model="newAddress">
+                        </div>
+                        <div class="row">
+                            <button type="submit">Add</button>
+                            <button ng-click="Reset()">Reset</button>
+                        </div>
+                    </form>
+                </p>
+                <div my-customer></div>
+                <my-dialog>Check out the contents, {{newName}}!</my-dialog>
             </div>
-            <div class="row">
-                <label for="newAddress">Price: </label>
-                <input id="newAddress" type="text" placeholder="Address"  ng-model="newAddress">
-            </div>        
-                <div class="row">
-                <button type="submit">Add</button>
-                <button ng-click="Reset()">Reset</button>
+            <div class="col-md-10">
+                Date format: <input ng-model="format"> Current time is: <span app-version="format"></span>
+                <br>
+                <hr/>
+                <ul>
+                    <li ng-repeat="student in students | filter:query | orderBy:orderProp">
+                        <span>{{student.name}}</span>
+                        <p>Address : {{student.address}}</p>
+                    </li>
+                </ul>
             </div>
-          </form>
-      </p>
-	</div>
-	<div class="col-md-10" >
-<ul>
-	 <li ng-repeat="student in students | filter:query | orderBy:orderProp">
-      <span>{{student.name}}</span>
-      <p>Address : {{student.address}}</p>
-    </li>
-</ul>
-</div>
-</div>
+        </div>
