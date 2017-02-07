@@ -24,9 +24,10 @@
 <div class="col-md-10" >
 <ul>
 	 <li ng-repeat="temp  in temps">
+     <div class="underlined-example-wrapper">
 	 	<span>Date:{{ parseDate(temp.dt)| date:'yyyy-MM-dd'}}</span>
     <h6><strong>Weather </strong></h6>
-    <p>Description : {{temp.weather[0].description}} &nbsp; <img ng-src="{{getIconImageUrl(temp.weather[0].icon)}}" /></p>
+    <p class="acrossDirective">Description : {{temp.weather[0].description}} &nbsp; <img ng-src="{{getIconImageUrl(temp.weather[0].icon)}}" /></p>
     ------------------------------
     <h6><strong>Other Details</strong></h6>
       <p>pressure:{{temp.pressure}}</p>
@@ -34,6 +35,7 @@
       <p>degrees:{{temp.deg}}</p>
       <p>min:{{temp.temp.min}}</p>
       <p>max:{{temp.temp.max}}</p>
+      <div>
     </li>
 </ul>
 </div>

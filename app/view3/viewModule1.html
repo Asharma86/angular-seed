@@ -1,0 +1,29 @@
+<div ng-contoller="viewModuleController2">
+    <div class="container-fluid">
+        <div class="row">
+<div class="col-md-6">Available Items
+            <ul style="list-style: none;">
+                <li ng-repeat="item in items | filter:query | orderBy:orderProp">
+                    <div class="underlined-example-wrapper">
+                        <span class="acrossDirective">{{item.name}}</span>
+                        <p>Price : {{item.price | currency:"$" }}</p>
+                        <button ng-click="addToCart()">select</button>
+                        <button ng-click="removeFrmCart()">Remove</button>
+                    </div>
+                </li>
+            </ul>
+</div >
+        <div class="col-md-4">You Have added worth : {{totalPrice | currency:"$"}}
+        <ul style="list-style: none;">
+            <li ng-repeat="item in cart">
+                <div class="underlined-example-wrapper">
+                    <span class="acrossDirective">{{item.name}}</span>
+                    <p>Price : {{item.price | currency:"$" }}</p>
+                    <button ng-click="removeFrmCart(item)">Remove</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>

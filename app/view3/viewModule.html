@@ -38,10 +38,12 @@
                 Date format: <input ng-model="format"> Current time is: <span app-version="format"></span>
                 <br>
                 <hr/>
-                <ul>
+                <ul style="list-style: none;">
                     <li ng-repeat="student in students | filter:query | orderBy:orderProp">
-                        <span>{{student.name}}</span>
+                        <div class="underlined-example-wrapper">
+                        <span class="acrossDirective">{{student.name}}</span>
                         <p>Address : {{student.address}}</p>
+                        </div>
                     </li>
                 </ul>
             </div>

@@ -49,4 +49,22 @@ angular.module('myApp.view3').directive('appVersion', ['$interval', 'dateFilter'
     scope: {},
     templateUrl: 'view3/my-dialog.html'
   };
-});;
+}).directive('acrossDirective', function () {
+  return {
+    restrict: 'C',
+    scope: {},
+    link: function (scope, element, attrs) {
+      element.addClass("underlineCls");
+      element.on('mouseover', function () {
+        element.css({
+        textTransform: 'uppercase'
+        });
+      });
+      element.on('mouseleave', function () {
+        element.css({
+        textTransform : 'capitalize'
+        });
+      });
+    }
+  };
+});

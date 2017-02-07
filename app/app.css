@@ -23,3 +23,38 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.underlineCls {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.underlineCls:hover {
+  color: #000;
+}
+
+.underlineCls:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.underlined-example-wrapper {
+    padding: 21px 20px 19px;
+    background-color: rgba(0,0,0,0);
+    display: inline-block;
+}
+.underlineCls:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
